@@ -5,6 +5,18 @@ export default class {
         let data = await fetch(url)
             .then(res => res.text())
             .then(text => JSON.parse(text.substr(47).slice(0, -2)))
-        return data
+        return this.adapter(data)
+    }
+    adapter(data) {
+        let cols = data.table.cols.map(c => c.label)
+        let rows = data.table.rows.map(r => r.c.map(r1 => r1.v))
+        rows = rows.map(e => {
+            let data = {}
+            cols.forEach((k, i) => {
+                data[k] = e[i]
+            });
+            return data
+        })
+        return rows
     }
 }
