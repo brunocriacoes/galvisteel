@@ -15,11 +15,11 @@ function removerDuplicate(arr) {
 }
 
 function get_image(uri) {
-    let id = "1WTulkrqR_eQwUGnIrLwudibpgg-5FwsF"
-    return `https://drive.google.com/file/d/${id}/preview`
+    const urlParams = new URLSearchParams(uri.split('?')[1]);
+    const id = urlParams.get('id')    
+    return `https://drive.google.com/uc?id=${id}`
 }
 
-console.log(data)
 
 
 
@@ -49,4 +49,3 @@ $tipo.innerHTML = tipo.map( t => `<option>${t}</option>`)
 $vao_metros.innerHTML = vao_metros.map( t => `<option>${t}</option>`)
 
 $imagem.src = get_image(data[0].imagem)
-
