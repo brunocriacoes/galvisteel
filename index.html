@@ -2,48 +2,74 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>galvisteel</title>
-    <script src="./assets/js/main.js" type="module" async></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style/style.css" />
+  <title>galvisteel</title>
+  <script src="./assets/js/main.js" type="module" async></script>
 </head>
 
 <body>
-    <h1>Plugin base</h1>
+  <form action="javascript:void(0)">
+    <header class="gal-header">
+      <h1>Monte seu produto</h1>
+    </header>
+    <strong class="gal-defina">Defina a aplicação</strong>
+    <div class="gal-selection">
+      <label>
+        <select class="js-aplicacao"></select>
+      </label>
+      <label>
+        <span class="gal-label">Defina o tipo</span>
+        <select class="js-tipo"></select>
+      </label>
+      <label>
+        <span class="gal-label">Defina o modelo</span>
+        <select class="js-modelo"></select>
+      </label>
+      <label>
+        <span class="gal-label">Vão (Metros)</span>
+        <select class="js-vao_metros"></select>
+      </label>
+      <label>
+        <span class="gal-label">Qtd de Apoios</span>
+        <select class="js-quant_apoios"></select>
+      </label>
+      <label>
+        <span class="gal-label">Cor externa</span>
+        <select class="js-cor"></select>
+      </label>
+      <label>
+        <span class="gal-label">Preenchimento</span>
+        <select class="js-preenchimento"></select>
+      </label>
 
 
-    <form action="javascript:void(0)">
-        <label>
-            <span>aplicacao</span> <br>
-            <select class="js-aplicacao"></select>
-        </label> <br>
-        <label>
-            <span>cor</span> <br>
-            <select class="js-cor"></select>
-        </label> <br>
-        <label>
-            <span>modelo</span> <br>
-            <select class="js-modelo"></select>
-        </label> <br>
-        <label>
-            <span>preenchimento</span> <br>
-            <select class="js-preenchimento"></select>
-        </label> <br>
-        <label>
-            <span>quant_apoios</span> <br>
-            <select class="js-quant_apoios"></select>
-        </label> <br>
-        <label>
-            <span>tipo</span> <br>
-            <select class="js-tipo"></select>
-        </label> <br>
-        <label>
-            <span>vao_metros</span> <br>
-            <select class="js-vao_metros"></select>
-        </label> <br>       
+
+    </div>
+    <div class="gal-grid">
+      <div class="img-projeto">
         <img class="js-imagem" src="" width="640" height="480" />
-    </form>
+        <a href="https://drive.google.com/file/d/1WgrjmdqJyetxSCUaYS5Uo93Y0clc8z9E/view?usp=share_link" target="_blank"
+          class="gal-catalogo">Baixar Catálogo</a>
+      </div>
+      <section class="gal-section">
+        <h2>Solicite uma proposta</h2>
+        <input type="text" name="name" placeholder="Seu nome" />
+        <input type="text" name="email" placeholder="Seu email" />
+        <input type="text" name="contact" placeholder="Seu whatsapp com DDD" />
+        <textarea name="message" rows="5" placeholder="Conte um pouco mais sobre o seu projeto..."></textarea>
+        <button type="submit">Receber proposta</button>
+      </section>
+    </div>
+
+  </form>
 </body>
 
 </html>

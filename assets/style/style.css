@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --verde: #259f9a;
+}
+
+/* Cabeçalho */
+
+.gal-header {
+    color: var(--verde);
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+/* Aplicação */
+
+.gal-selection {
+    display: block;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.gal-label {
+    font-size: 12px;
+    color: #777;
+}
+
+.gal-selection select {
+    display: block;
+    width: 100%;
+    border-radius: 50px;
+    padding: 7px;
+    margin-top: 7px;
+    border: 1px solid var(--verde);
+    color: var(--verde);
+}
+
+.gal-defina {
+    display: block;
+    padding-left: 20px;
+    margin-bottom: -30px;
+}
+
+/* Formulario de proposta */
+.gal-section {
+    display: block;
+    padding: 10px 45px;
+    width: 500px;
+    max-width: 95%;
+}
+
+.gal-section h2 {
+    color: #000;
+    display: block;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.gal-section form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.gal-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .gal-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gal-selection {
+        display: flex;
+    }
+}
+
+.js-imagem {
+    display: block;
+    width: 400px;
+    margin: 0 auto;
+    height: auto;
+    max-width: 90%;
+}
+
+
+.gal-section input {
+    text-indent: 15px;
+    padding: 10px;
+    outline: none;
+    border: solid 1px var(--verde);
+    display: block;
+    width: 100%;
+    border-radius: 50px;
+    margin-bottom: 20px;
+}
+
+.gal-section textarea {
+    padding: 20px;
+    outline: none;
+    border: solid 1px var(--verde);
+    margin-bottom: 20px;
+    border-radius: 25px;
+    width: 100%;
+}
+
+.gal-section button {
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background: var(--verde);
+    color: #fff;
+    margin-bottom: 20px;
+    transition: all 0.5s;
+    border-radius: 50px;
+}
+
+.gal-section button:hover {
+    filter: brightness(1.2);
+}
+
+.gal-catalogo {
+    text-decoration: none;
+    display: block;
+    width: 180px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: var(--verde);
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border: 2px solid var(--verde);
+    text-align: center;
+    border-radius: 50px;
+
+}
