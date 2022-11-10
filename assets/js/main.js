@@ -29,6 +29,12 @@ function alterImage() {
     let tipo = document.querySelector('.js-tipo').value
     let vao_metros = document.querySelector('.js-vao_metros').value
     let $imagem = document.querySelector('.js-imagem')
+    console.log(tipo)
+    if(tipo == 'Termoacústica') {
+        document.querySelector('.js-preenchimento').setAttribute('disabled', 'disabled')
+    }else {
+        document.querySelector('.js-preenchimento').removeAttribute('disabled')
+    }
     let find_img = data.find(e =>
         aplicacao == e.aplicacao &&
         cor == e.cor &&
