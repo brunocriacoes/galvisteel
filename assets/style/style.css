@@ -9,6 +9,14 @@
 :root {
     --verde: #259f9a;
 }
+body {
+    min-height: 150vh;
+}
+@media (min-width: 768px) {
+    body {
+        min-height: 110vh;
+    }
+}
 
 /* Cabeçalho */
 
