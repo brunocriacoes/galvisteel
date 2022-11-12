@@ -29,39 +29,41 @@ function alterImage() {
     let tipo = document.querySelector('.js-tipo').value
     let vao_metros = document.querySelector('.js-vao_metros').value
     let $imagem = document.querySelector('.js-imagem')
-    console.log(tipo)
-    if(tipo == 'Termoacústica') {
+    if(tipo != 'Termoacústica') {
         document.querySelector('.js-preenchimento').setAttribute('disabled', 'disabled')
+        document.querySelector('.js-preenchimento').value = "N/A"
+        document.querySelector('.js-aplicacao').removeAttribute('disabled')
     }else {
         document.querySelector('.js-preenchimento').removeAttribute('disabled')
+        document.querySelector('.js-aplicacao').value = "N/A"
+        document.querySelector('.js-aplicacao').setAttribute('disabled', 'disabled')
     }
-    let find_img = data.find(e =>
-        aplicacao == e.aplicacao &&
-        cor == e.cor &&
-        modelo == e.modelo &&
-        preenchimento == e.preenchimento &&
-        quant_apoios == e.quant_apoios &&
-        tipo == e.tipo &&
-        vao_metros == e.vao_metros
-    )
-    let img = find_img?.imagem || null
-    console.log({
-        aplicacao,
-        cor,
-        modelo,
+
+    let valuesInput = {
         preenchimento,
+        aplicacao,
+        modelo,
+        cor,
         quant_apoios,
         tipo,
         vao_metros,
         data,
-        img
-    })
-    if(img) {
-        $imagem.src = get_image(img)
-    }else {
-        
-        $imagem.src = 'https://i.pinimg.com/originals/2b/02/15/2b02159fee58d573c079ad5212d56b63.gif'
     }
+    let modeloDefault = data.filter( m => m.modelo == valuesInput.modelo)
+    Object.keys(valuesInput).forEach(key => {
+        let valorInputKey = valuesInput[key]
+        if(valorInputKey != "N/A") {
+            let tmp = modeloDefault.filter( t => t[key] == valorInputKey)
+            if(tmp.length > 0) {
+                modeloDefault = tmp
+            }            
+        }        
+    });
+    
+    let img = modeloDefault[0].imagem || null
+    
+    $imagem.src = get_image(img)
+    
 }
 
 
