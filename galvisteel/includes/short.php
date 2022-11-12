@@ -1,7 +1,5 @@
 <?php
 
-
-
 add_shortcode('g-prod', 'short_galvisteel');
 
 function short_galvisteel($atributes = [], $content = null)
@@ -14,7 +12,7 @@ function short_galvisteel($atributes = [], $content = null)
         </script>
         <iframe 
             width=\"100%\"
-            style=\"border:none;min-height:100vh\"
+            style=\"border:none;min-height:170vh\"
             src=\"https://brunocriacoes.github.io/galvisteel/\"
             scrolling=\"no\" 
             onload=\"resizeIframe(this)\"

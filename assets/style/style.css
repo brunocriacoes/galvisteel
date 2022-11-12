@@ -9,9 +9,11 @@
 :root {
     --verde: #259f9a;
 }
+
 body {
     min-height: 200vh;
 }
+
 @media (min-width: 768px) {
     body {
         min-height: 150vh;
@@ -59,6 +61,7 @@ body {
     padding-left: 20px;
     margin-bottom: -15px;
 }
+
 @media (min-width: 768px) {
     .gal-defina {
         margin-bottom: -30px;
@@ -167,6 +170,7 @@ body {
     border-radius: 50px;
 
 }
+
 .img-projeto,
 .gal-section {
     max-width: 100vw;
