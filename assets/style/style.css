@@ -49,7 +49,12 @@
 .gal-defina {
     display: block;
     padding-left: 20px;
-    margin-bottom: -30px;
+    margin-bottom: -15px;
+}
+@media (min-width: 768px) {
+    .gal-defina {
+        margin-bottom: -30px;
+    }
 }
 
 /* Formulario de proposta */
@@ -94,7 +99,7 @@
     width: 400px;
     margin: 0 auto;
     height: auto;
-    max-width: 90%;
+    max-width: 80vw;
 }
 
 :disabled {
@@ -153,4 +158,8 @@
     text-align: center;
     border-radius: 50px;
 
+}
+.img-projeto,
+.gal-section {
+    max-width: 100vw;
 }

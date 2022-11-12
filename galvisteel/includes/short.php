@@ -5,8 +5,7 @@
 add_shortcode('g-prod', 'short_galvisteel');
 
 function short_galvisteel($atributes = [], $content = null)
-{
-    
+{ 
     return "
         <script>
             function resizeIframe(obj) {
