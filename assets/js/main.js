@@ -29,6 +29,9 @@ function alterImage() {
     let tipo = document.querySelector('.js-tipo').value
     let vao_metros = document.querySelector('.js-vao_metros').value
     let $imagem = document.querySelector('.js-imagem')
+    let img_loading = "https://i.pinimg.com/originals/2b/02/15/2b02159fee58d573c079ad5212d56b63.gif"
+    $imagem.src = img_loading
+
     if(tipo != 'Termoacústica') {
         document.querySelector('.js-preenchimento').setAttribute('disabled', 'disabled')
         document.querySelector('.js-preenchimento').value = "N/A"
@@ -49,6 +52,7 @@ function alterImage() {
         vao_metros,
         data,
     }
+    
     let modeloDefault = data.filter( m => m.modelo == valuesInput.modelo)
     Object.keys(valuesInput).forEach(key => {
         let valorInputKey = valuesInput[key]
@@ -61,8 +65,10 @@ function alterImage() {
     });
     
     let img = modeloDefault[0].imagem || null
-    
-    $imagem.src = get_image(img)
+    setTimeout(() => {
+        $imagem.src = get_image(img)
+
+    }, 500)
     
 }
 
