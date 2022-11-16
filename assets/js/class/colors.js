@@ -1,0 +1,17 @@
+export default {
+    "Branco BR-G01": "#ffffff",
+    "Amarelo AM-G01": "#f6ec5b",
+    "Azul AZ-G03": "#3375b8",
+    "Azul AZ-G04": "#29618d",
+    "Azul AZ-G05": "#225380",
+    "Bege BG-G01": "#f8f2d4",
+    "Bege BG-G02": "#ebdfb3",
+    "Cerâmica CR-G01": "#9b6b4c",
+    "Cinza CZ-G03": "#bdbfc1",
+    "Cinza CZ-G04": "#96989a",
+    "Marrom MA-G01": "#79675d",
+    "Preto PR-G01": "#000000",
+    "Verde VD-G04": "#57724b",
+    "Verde VD-G05": "#3f6943",
+    "Vermelho VM-G01": "#b1413f",
+}

@@ -1,5 +1,6 @@
 import ReadTable from "./class/ReadTable.js"
-
+import colors from "./class/colors.js"
+import images from "./class/images.js"
 
 const table = new ReadTable()
 const data = await table.getData()
@@ -31,6 +32,7 @@ function alterImage() {
     let $imagem = document.querySelector('.js-imagem')
     let img_loading = "https://i.pinimg.com/originals/2b/02/15/2b02159fee58d573c079ad5212d56b63.gif"
     $imagem.src = img_loading
+    document.querySelector('.js-imagem').style.backgroundColor ="#FFF"
 
     if(tipo != 'Termoacústica') {
         document.querySelector('.js-preenchimento').setAttribute('disabled', 'disabled')
@@ -52,22 +54,11 @@ function alterImage() {
         vao_metros,
         data,
     }
-    
-    let modeloDefault = data.filter( m => m.modelo == valuesInput.modelo)
-    Object.keys(valuesInput).forEach(key => {
-        let valorInputKey = valuesInput[key]
-        if(valorInputKey != "N/A") {
-            let tmp = modeloDefault.filter( t => t[key] == valorInputKey)
-            if(tmp.length > 0) {
-                modeloDefault = tmp
-            }            
-        }        
-    });
-    
-    let img = modeloDefault[0].imagem || null
+        
+    let img = './assets/images/' + images[modelo] + '.png' || null
     setTimeout(() => {
-        $imagem.src = get_image(img)
-
+        $imagem.src = (img)
+        document.querySelector('.js-imagem').style.backgroundColor = colors[cor]
     }, 500)
     
 }
@@ -91,7 +82,7 @@ let $vao_metros = document.querySelector('.js-vao_metros')
 let $imagem = document.querySelector('.js-imagem')
 
 $aplicacao.innerHTML = aplicacao.map(t => `<option>${t}</option>`)
-$cor.innerHTML = cor.map(t => `<option>${t}</option>`)
+$cor.innerHTML = Object.keys(colors).map(t => `<option>${t}</option>`)
 $modelo.innerHTML = modelo.map(t => `<option>${t}</option>`)
 $preenchimento.innerHTML = preenchimento.map(t => `<option>${t}</option>`)
 $quant_apoios.innerHTML = quant_apoios.map(t => `<option>${t}</option>`)
